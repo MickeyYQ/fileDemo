@@ -33,12 +33,16 @@ public class FileScanner {
 
     public void fileCreate(String filePath){
         System.out.println("正在创建文件夹文件。。。");
+        String path = filePath+"\\TestFile\\";
+
         File file = new File(filePath);
         try {
             file.createNewFile();
             System.out.println("file---->"+file);
             try {
+                System.out.println("开始写文件！！！");
                 fileWrite(file);
+                System.out.println("文件完成！！！");
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -57,13 +61,16 @@ public class FileScanner {
         try {
             for(int i = 0; i < 5; i++) {
                 list.add(line);
-                for (String a : list) {
-                    System.out.println(a);
-                    text = a;
-                    bw.write(text);
-                    bw.append("\r\n");
-                }
             }
+            System.out.println("文件内容装填成功！");
+            for (String a : list) {
+                System.out.println(a);
+                text = a;
+                bw.write(text);
+                bw.append("\r\n");
+            }
+            System.out.println("写文件完成！！！");
+
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
