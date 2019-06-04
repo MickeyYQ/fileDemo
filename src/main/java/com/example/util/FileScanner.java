@@ -25,11 +25,11 @@ public class FileScanner {
 
         } else {
             System.err.println("文件不存在！");
-            file(filePath);
+            fileCreate(filePath);
         }
     }
 
-    public void file(String filePath){
+    public void fileCreate(String filePath){
         System.out.println("正在创建文件夹文件。。。");
         File file = new File(filePath);
         try {
