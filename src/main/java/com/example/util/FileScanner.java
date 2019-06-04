@@ -1,6 +1,8 @@
 package com.example.util;
 
 import java.io.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class FileScanner {
 
@@ -35,10 +37,39 @@ public class FileScanner {
         try {
             file.createNewFile();
             System.out.println("file---->"+file);
+            try {
+                fileWrite(file);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         } catch (IOException e) {
             e.printStackTrace();
         }
         //file.mkdirs();//创建多级文件夹
+
+    }
+
+    public void fileWrite(File file) throws Exception {
+        String text = "";
+        String line = "I Love You!";
+        List<String> list = new ArrayList<>();
+        BufferedWriter bw = new BufferedWriter(new FileWriter(file));
+        try {
+            for(int i = 0; i < 5; i++) {
+                list.add(line);
+                for (String a : list) {
+                    System.out.println(a);
+                    text = a;
+                    bw.write(text);
+                    bw.append("\r\n");
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            bw.flush();
+            bw.close();
+        }
 
     }
 
