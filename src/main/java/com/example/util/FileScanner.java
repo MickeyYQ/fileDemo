@@ -6,11 +6,11 @@ import java.util.List;
 
 public class FileScanner {
 
-    public void getFile(String filePath){
+    public String getFile(String filePath){
         File file = new File(filePath);
         System.out.println("核实路径"+file);
+        String line = "";
         if(file.exists()){
-            String line = "";
             InputStreamReader reader = null;
             try {
                 reader = new InputStreamReader(new FileInputStream(file));
@@ -29,6 +29,7 @@ public class FileScanner {
             System.err.println("文件不存在！");
             fileCreate(filePath);
         }
+        return line;
     }
 
     public void fileCreate(String filePath){
@@ -81,7 +82,8 @@ public class FileScanner {
     }
 
     public static void main(String[] args) {
-        String filePath = "C:\\Users\\Mickey\\Documents\\2019test.txt";
+        //String filePath = "C:\\Users\\Mickey\\Documents\\2019test.txt";
+        String filePath =  "C:\\Users\\Lenovo\\Desktop\\2019test.txt";
         FileScanner fs = new FileScanner();
         fs.getFile(filePath);
     }
