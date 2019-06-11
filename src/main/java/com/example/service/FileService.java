@@ -8,6 +8,4 @@ public interface FileService {
 
     public void save(Filefold filefold);
 
-    public Filefold findAll();
-
 }

@@ -6,7 +6,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface FileRepository extends JpaRepository<Filefold, Integer>{
 
-    Filefold insertNr(int id);
-
 
 }
