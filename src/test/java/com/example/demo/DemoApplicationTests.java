@@ -23,9 +23,13 @@ public class DemoApplicationTests {
         filefold.setFilenamea("");
         filefold.setFilenameb("");
         filefold.setFilenamec("");
-
+        filefold.setFilenamed("");
+        filefold.setFilenamee("");
+        filefold.setFilenamef("");
+        filefold.setFilenameg("");
+        filefold.setFilenameh("");
         filefold.setId(123);
-        fileRepository.insertNr(filefold.getId());
+        fileRepository.save(filefold);
     }
 
 }
