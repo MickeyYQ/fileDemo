@@ -82,8 +82,7 @@ public class FileScanner {
     }
 
     public static void main(String[] args) {
-        //String filePath = "C:\\Users\\Mickey\\Documents\\2019test.txt";
-        String filePath =  "C:\\Users\\Lenovo\\Desktop\\2019test.txt";
+        String filePath = "C:\\Users\\Mickey\\Documents\\2019test.txt";
         FileScanner fs = new FileScanner();
         fs.getFile(filePath);
     }
