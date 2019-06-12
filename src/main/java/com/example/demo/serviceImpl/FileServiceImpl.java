@@ -1,8 +1,8 @@
-package com.example.serviceImpl;
+package com.example.demo.serviceImpl;
 
-import com.example.pojo.Filefold;
-import com.example.repository.FileRepository;
-import com.example.service.FileService;
+import com.example.demo.repository.FileRepository;
+import com.example.demo.service.FileService;
+import com.example.demo.pojo.Filefold;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

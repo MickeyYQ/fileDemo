@@ -1,15 +1,13 @@
-package com.example.pojo;
+package com.example.demo.pojo;
 
-import org.springframework.data.annotation.Id;
+import javax.persistence.*;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-
-@Entity(name = "test")
+@Entity
+@Table(name = "test")
 public class Filefold {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy= GenerationType.AUTO)
     private int id;
     private String filenamea;
     private String filenameb;

@@ -1,14 +1,12 @@
 package com.example.demo;
 
-import com.example.pojo.Filefold;
-import com.example.repository.FileRepository;
+import com.example.demo.pojo.Filefold;
+import com.example.demo.repository.FileRepository;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
-
-import java.util.UUID;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
@@ -28,8 +26,12 @@ public class DemoApplicationTests {
         filefold.setFilenamef("");
         filefold.setFilenameg("");
         filefold.setFilenameh("");
-        filefold.setId(123);
         fileRepository.save(filefold);
+    }
+
+    @Test
+    public void del() {
+        fileRepository.deleteById(1);
     }
 
 }

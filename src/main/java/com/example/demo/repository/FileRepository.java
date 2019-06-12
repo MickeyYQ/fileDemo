@@ -1,6 +1,6 @@
-package com.example.repository;
+package com.example.demo.repository;
 
-import com.example.pojo.Filefold;
+import com.example.demo.pojo.Filefold;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 
