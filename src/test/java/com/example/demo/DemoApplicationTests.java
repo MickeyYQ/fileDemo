@@ -34,4 +34,9 @@ public class DemoApplicationTests {
         fileRepository.deleteById(1);
     }
 
+    @Test
+    public void watch() {
+        fileRepository.findAll();
+    }
+
 }
