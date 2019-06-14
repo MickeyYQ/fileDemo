@@ -18,20 +18,25 @@ public class DemoApplicationTests {
     @Test
     public void contextLoads() {
         Filefold filefold = new Filefold();
-        filefold.setFilenamea("");
-        filefold.setFilenameb("");
-        filefold.setFilenamec("");
-        filefold.setFilenamed("");
-        filefold.setFilenamee("");
-        filefold.setFilenamef("");
-        filefold.setFilenameg("");
-        filefold.setFilenameh("");
+        filefold.setFilenamea("a");
+        filefold.setFilenameb("b");
+        filefold.setFilenamec("c");
+        filefold.setFilenamed("d");
+        filefold.setFilenamee("e");
+        filefold.setFilenamef("f");
+        filefold.setFilenameg("g");
+        filefold.setFilenameh("h");
         fileRepository.save(filefold);
     }
 
     @Test
     public void del() {
         fileRepository.deleteById(1);
+    }
+
+    @Test
+    public void delAll(){
+        fileRepository.deleteAll();
     }
 
     @Test

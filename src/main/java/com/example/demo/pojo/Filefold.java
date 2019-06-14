@@ -3,7 +3,7 @@ package com.example.demo.pojo;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "test")
+@Table(name = "testy")
 public class Filefold {
 
     @Id
