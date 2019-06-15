@@ -15,5 +15,12 @@ public class Test {
     public static void main(String[] args) {
         Test test = new Test();
         test.getUid();
+
+        String[] aa = "aaa|bbb|ccc".split("|");
+        String[] ab = "aa a|bb b|cc c".split("\\|"); //这样才能得到正确的结果
+        for (int i = 0 ; i <ab.length ; i++ ) {
+            //System.out.println("--"+aa[i]);
+            System.out.println("--"+ab[i]);
+        }
     }
 }

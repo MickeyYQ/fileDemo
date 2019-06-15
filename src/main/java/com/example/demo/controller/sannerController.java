@@ -29,8 +29,8 @@ public class sannerController {
         FileScanner fs = new FileScanner();
         list = fs.getFile("C:\\Users\\Mickey\\Documents\\2019test.txt");
         System.out.println("list----->" + list);
-        list.remove("null");
-        System.out.println("list----->" + list);
+        //list.remove("null");
+        //System.out.println("list----->" + list);
         for(String s : list){
             System.out.println(dt.date()+" s-->>>>>>"+s);
             if(s.equals("null")){
@@ -39,17 +39,23 @@ public class sannerController {
             }else{
                 s = s.substring(0,s.length() - 1);
                 System.out.println("修改后的s"+s);
-                List<String> str = Arrays.asList(StringUtils.commaDelimitedListToStringArray(s));
-                for (String a:str) {
-                    System.out.println(a);
+                //将list： I Love You!|I Love You!|I Love You!|I Love You!|I Love You!|I Love You!|I Love You!|I Love You!|转换为8个
+                String[] sb = s.split("\\|");
+                for (String a:sb) {
+                    //System.out.println("a--- "+a);
+                    listb.add(a);
+                    for(String c : listb){
+                        System.out.println("c-- "+c);
+
+                    }
+                    System.out.println(listb);
                 }
 
+
             }
-            //将list： I Love You!|I Love You!|I Love You!|I Love You!|I Love You!|I Love You!|I Love You!|I Love You!|转换为8个
 
         }
 
-        System.out.println(ffd.get(0));
         f.setFilenamea("");
         f.setFilenameb("b");
         f.setFilenamec("c");
@@ -64,7 +70,7 @@ public class sannerController {
             if(list.equals("") || list == null || list.equals("null")){
                 list.clear();
             }else{
-                //fileRepository.saveAll(ffd);
+                fileRepository.saveAll(ffd);
             }
         }
         return "你好啊！";
