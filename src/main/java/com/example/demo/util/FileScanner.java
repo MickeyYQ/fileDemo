@@ -13,12 +13,16 @@ public class FileScanner {
         String line = "";
         if(file.exists()){
             InputStreamReader reader = null;
+            //FileReader fileReader = null;
             try {
                 reader = new InputStreamReader(new FileInputStream(file));
+                //fileReader = new FileReader(file);
                 BufferedReader br = new BufferedReader(reader);
                 System.out.println("--读取的内容--");
                 while(line != null ){
                     if(line.equals("null") || line == "null"){
+                        break;
+                    }else if(br.read() == -1 || br.readLine() == null){
                         break;
                     }else{
                         line = br.readLine();
