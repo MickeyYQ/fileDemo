@@ -36,11 +36,12 @@ public class sannerController {
                 //return s.toString().replace("null","");
             }else{
                 s = s.substring(0,s.length() - 1);
-                System.out.println("修改后的s"+s);
+                System.out.println("修改后的s "+s);
                 //将list： I Love You!|I Love You!|I Love You!|I Love You!|I Love You!|I Love You!|I Love You!|I Love You!|转换为8个
                 String[] sb = s.split("\\|");
                 System.out.println("sb---- "+sb);
-                for (String a:sb) {
+                listb.add(String.valueOf(sb));
+                /*for (String a:sb) {
                     //System.out.println("a--- "+a);
                     listb.add(a);
                     for(String c : listb){
@@ -49,9 +50,9 @@ public class sannerController {
                     }
                     //  System.out.println("listb---- "+listb);
 
-                }
+                }*/
                 System.out.println("listb---- "+listb);
-                //ffd.add(listb);
+
 
 
             }
@@ -61,24 +62,24 @@ public class sannerController {
         for(Filefold fl : ffd){
             System.out.println("fl--- "+fl);
         }
-        f.setFilenamea("");
-        f.setFilenameb("b");
-        f.setFilenamec("c");
-        f.setFilenamed("d");
-        f.setFilenamee("e");
-        f.setFilenamef("f");
-        f.setFilenameg("g");
-        f.setFilenameh("h");
-        //ffd.add(f);
+        f.setFilenamea(listb.get(0));
+        f.setFilenameb(listb.get(1));
+        f.setFilenamec(listb.get(2));
+        f.setFilenamed(listb.get(3));
+        f.setFilenamee(listb.get(4));
+        f.setFilenamef(listb.get(5));
+        f.setFilenameg(listb.get(6));
+        f.setFilenameh(listb.get(7));
+        ffd.add(f);
 
-        /*for(int a = 0 ;a<list.size();a++){
+        for(int a = 0 ;a<list.size();a++){
             if(list.equals("") || list == null || list.equals("null")){
                 list.clear();
             }else{
                 fileRepository.saveAll(ffd);
             }
-        }*/
-        fileRepository.saveAll(ffd);
+        }
+        //fileRepository.saveAll(ffd);
         return "你好啊！";
     }
 }
