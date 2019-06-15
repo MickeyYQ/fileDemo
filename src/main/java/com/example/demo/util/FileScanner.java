@@ -17,9 +17,14 @@ public class FileScanner {
                 reader = new InputStreamReader(new FileInputStream(file));
                 BufferedReader br = new BufferedReader(reader);
                 System.out.println("--读取的内容--");
-                while(line != null){
-                    line = br.readLine();
-                    System.out.println(line);
+                while(line != null ){
+                    if(line.equals("null") || line == "null"){
+                        break;
+                    }else{
+                        line = br.readLine();
+                        System.out.println(line);
+                        nr.add(line);
+                    }
                     //return line;
                 }
                 System.out.println("--读取的内容--");
