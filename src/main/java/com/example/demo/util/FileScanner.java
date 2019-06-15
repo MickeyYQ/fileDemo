@@ -9,7 +9,7 @@ public class FileScanner {
     public List<String> getFile(String filePath){
         List<String> nr = new ArrayList<>();
         File file = new File(filePath);
-        System.out.println("核实路径"+file);
+        System.out.println("核实路径: "+file);
         String line = "";
         if(file.exists()){
             InputStreamReader reader = null;
