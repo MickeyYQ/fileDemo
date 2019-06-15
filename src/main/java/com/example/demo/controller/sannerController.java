@@ -19,17 +19,17 @@ public class sannerController {
     @RequestMapping("/index")
     public String insertAll(){
         Filefold f = new Filefold();
-        List<String> list = new ArrayList<>();
+        List<String> list ;
         List<Filefold> ffd = new ArrayList<>();
         FileScanner fs = new FileScanner();
-        String a = fs.getFile("C:\\Users\\Mickey\\Documents\\2019test.txt");
-        System.out.println("a----->" + a);
-        list.add(a);
+        list = fs.getFile("C:\\Users\\Mickey\\Documents\\2019test.txt");
+        System.out.println("list----->" + list);
+
         for(String b : list){
             System.out.println(b);
         }
 
-        fileRepository.saveAll(ffd);
+        //fileRepository.saveAll(ffd);
         return "你好啊！";
     }
 }

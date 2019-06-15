@@ -6,7 +6,7 @@ import java.util.List;
 
 public class FileScanner {
 
-    public String getFile(String filePath){
+    public List<String> getFile(String filePath){
         List<String> nr = new ArrayList<>();
         File file = new File(filePath);
         System.out.println("核实路径"+file);
@@ -16,12 +16,13 @@ public class FileScanner {
             try {
                 reader = new InputStreamReader(new FileInputStream(file));
                 BufferedReader br = new BufferedReader(reader);
-
+                System.out.println("--读取的内容--");
                 while(line != null){
                     line = br.readLine();
                     System.out.println(line);
                     //return line;
                 }
+                System.out.println("--读取的内容--");
 
             } catch (Exception e) {
                 e.printStackTrace();
@@ -32,7 +33,7 @@ public class FileScanner {
             fileCreate(filePath);
         }
 
-        return line;
+        return nr;
     }
 
     public void fileCreate(String filePath){
