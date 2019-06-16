@@ -127,7 +127,7 @@ public class FileScanner {
     public static void main(String[] args) {
         String filePath = "C:\\Users\\Mickey\\Documents\\2019test.txt";
         FileScanner fs = new FileScanner();
-        fs.rmfile(filePath);//删除文件
+        //fs.rmfile(filePath);//删除文件
         fs.getFile(filePath);//文件生成
     }
 }
