@@ -69,21 +69,22 @@ public class FileScanner {
 
     public StringBuilder fileWrite(File file) throws Exception {
         StringBuilder text = null;
-        String line = "I Love You!";
+        String line = "I Love You!--Forever LOVE!";
         List<String> list = new ArrayList<>();
         StringBuilder stringBuilder=new StringBuilder(line);
         BufferedWriter bw = new BufferedWriter(new FileWriter(file));
         try {
             System.out.println("--stringBuilder--"+stringBuilder);
-            text = stringBuilder.insert(11,"|");
+            //text = stringBuilder.insert(11,"|");
             System.out.println(text);
             for (int j = 0 ;j < 10; j++ ) {
                 //bw.append("|");
                 //bw.write(line);
                 for(int i = 0;i<8;i++){
                     //bw.append(line);
-                    bw.write(String.valueOf(text));
-                    //bw.append("|");
+                    //bw.write(String.valueOf(text));
+                    bw.write(line);
+                    bw.append("|");
                     System.out.println("bw:"+ bw);
 
                 }
@@ -91,7 +92,7 @@ public class FileScanner {
                 //bw.append("\r\n");
             }
 
-            System.out.println("-内容-"+text);
+            System.out.println("-内容-"+text+"line:"+line);
             System.out.println("写文件完成！！！");
             bw.flush();
 
@@ -126,7 +127,7 @@ public class FileScanner {
     public static void main(String[] args) {
         String filePath = "C:\\Users\\Mickey\\Documents\\2019test.txt";
         FileScanner fs = new FileScanner();
-        //fs.rmfile(filePath);//删除文件
+        fs.rmfile(filePath);//删除文件
         fs.getFile(filePath);//文件生成
     }
 }
