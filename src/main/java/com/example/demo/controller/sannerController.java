@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 @RestController
@@ -39,18 +40,20 @@ public class sannerController {
                 System.out.println("修改后的s "+s);
                 //将list： I Love You!|I Love You!|I Love You!|I Love You!|I Love You!|I Love You!|I Love You!|I Love You!|转换为8个
                 String[] sb = s.split("\\|");
-                System.out.println("sb---- "+sb);
-                listb.add(String.valueOf(sb));
-                /*for (String a:sb) {
-                    //System.out.println("a--- "+a);
+                System.out.println("sb---- "+sb.length+" ---- "+sb);
+                //System.out.println(String.valueOf(sb));
+                listb.addAll(Arrays.asList(sb));
+                //listb.add(String.valueOf(sb));
+                for (String a:sb) {
+                    System.out.println("a--- "+a);
                     listb.add(a);
-                    for(String c : listb){
+                    /*for(String c : listb){
                         System.out.println("c-- "+c);
 
-                    }
+                    }*/
                     //  System.out.println("listb---- "+listb);
 
-                }*/
+                }
                 System.out.println("listb---- "+listb);
 
 
@@ -58,9 +61,9 @@ public class sannerController {
             }
 
         }
-
+        System.out.println("ffd--- "+ffd.size());
         for(Filefold fl : ffd){
-            System.out.println("fl--- "+fl);
+            System.out.println("fl--- "+fl+ffd.size());
         }
         f.setFilenamea(listb.get(0));
         f.setFilenameb(listb.get(1));
@@ -80,6 +83,6 @@ public class sannerController {
             }
         }
         //fileRepository.saveAll(ffd);
-        return "你好啊！";
+        return "TMD！";
     }
 }

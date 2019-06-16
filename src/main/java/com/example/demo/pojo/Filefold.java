@@ -7,7 +7,9 @@ import javax.persistence.*;
 public class Filefold {
 
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
+    @GeneratedValue(strategy= GenerationType.TABLE)
+    //strategy= GenerationType.IDENTITY
+    //strategy= GenerationType.AUTO
     private int id;
     private String filenamea;
     private String filenameb;
