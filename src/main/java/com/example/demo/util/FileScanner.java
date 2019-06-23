@@ -6,6 +6,59 @@ import java.util.List;
 
 public class FileScanner {
 
+    public static void main(String[] args) {
+        String filePath = "C:\\Users\\Mickey\\Documents\\2019test.txt";
+        FileScanner fs = new FileScanner();
+        //fs.rmfile(filePath);//删除文件
+        //fs.getFile(filePath);//文件生成
+        fs.getLine(filePath);//读一行的文件内容
+    }
+
+    /*文本内容读一行  插入*/
+    public String getLine(String filePath) {
+        String newLine = null;//文件获取内容
+        String line = "";//读取的文件内容
+        File file = new File(filePath);
+        System.out.println("核实路径: "+file);
+        List<String> lst = new ArrayList<>();
+        if(file.exists()){
+            InputStreamReader reader = null;
+            //FileReader fileReader = null;
+            try {
+                reader = new InputStreamReader(new FileInputStream(file));
+                //fileReader = new FileReader(file);
+                BufferedReader br = new BufferedReader(reader);
+                System.out.println("--读取的内容--");
+                while(line != null ){
+                    if(line.equals("null") || line == "null"){
+                        break;
+                    }else if(br.read() == -1 || br.readLine() == null){
+                        break;
+                    }else{
+                        line = br.readLine();//读文件内容
+                        System.out.println(line);
+                        lst.add(line);
+                    }
+                }
+                System.out.println("读取文件大小内容 ："+lst.size());
+                for(int i = 0 ; i< lst.size();i ++){
+                    newLine = lst.get(i);
+                    System.out.println("读取当前内容 newLine ："+newLine);
+                    return newLine;
+                }
+                System.out.println("--读取的内容--");
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
+        } else {
+            System.err.println("文件不存在！");
+            fileCreate(filePath);
+        }
+
+        return line;
+    }
+
     public List<String> getFile(String filePath){
         List<String> nr = new ArrayList<>();
         File file = new File(filePath);
@@ -22,9 +75,9 @@ public class FileScanner {
                 while(line != null ){
                     if(line.equals("null") || line == "null"){
                         break;
-                    }else if(br.read() == -1 || br.readLine() == null){
+                    }/*else if(br.read() == -1 || br.readLine() == null){
                         break;
-                    }else{
+                    }*/else{
                         line = br.readLine();
                         System.out.println(line);
                         nr.add(line);
@@ -124,10 +177,5 @@ public class FileScanner {
         return flag;
     }
 
-    public static void main(String[] args) {
-        String filePath = "C:\\Users\\Mickey\\Documents\\2019test.txt";
-        FileScanner fs = new FileScanner();
-        //fs.rmfile(filePath);//删除文件
-        fs.getFile(filePath);//文件生成
-    }
+
 }

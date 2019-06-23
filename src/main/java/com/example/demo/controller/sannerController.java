@@ -26,8 +26,8 @@ public class sannerController {
         List<String> listb = new ArrayList<String>();
         List<Filefold> ffd = new ArrayList<>();
         FileScanner fs = new FileScanner();
-
-        list = fs.getFile("C:\\Users\\Mickey\\Documents\\2019test.txt");
+        //String line = fs.getLine("C:\\Users\\Mickey\\Documents\\2019test.txt");//读一行文件内容插入
+        list = fs.getFile("C:\\Users\\Mickey\\Documents\\2019test.txt");//读所有文件插入
         System.out.println("list----->" + list);
 
         if (list != null || list.size() > 0){
