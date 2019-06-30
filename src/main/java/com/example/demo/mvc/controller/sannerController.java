@@ -1,7 +1,7 @@
-package com.example.demo.controller;
+package com.example.demo.mvc.controller;
 
-import com.example.demo.pojo.Filefold;
-import com.example.demo.repository.FileRepository;
+import com.example.demo.mvc.pojo.Filefold;
+import com.example.demo.mvc.repository.FileRepository;
 import com.example.demo.util.DateTime;
 import com.example.demo.util.FileScanner;
 import org.springframework.beans.factory.annotation.Autowired;

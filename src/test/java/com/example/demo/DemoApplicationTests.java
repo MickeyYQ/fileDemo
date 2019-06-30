@@ -1,7 +1,7 @@
 package com.example.demo;
 
-import com.example.demo.pojo.Filefold;
-import com.example.demo.repository.FileRepository;
+import com.example.demo.mvc.pojo.Filefold;
+import com.example.demo.mvc.repository.FileRepository;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;

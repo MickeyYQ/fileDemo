@@ -1,8 +1,8 @@
-package com.example.demo.serviceImpl;
+package com.example.demo.mvc.serviceImpl;
 
-import com.example.demo.repository.FileRepository;
-import com.example.demo.service.FileService;
-import com.example.demo.pojo.Filefold;
+import com.example.demo.mvc.pojo.Filefold;
+import com.example.demo.mvc.repository.FileRepository;
+import com.example.demo.mvc.service.FileService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
